@@ -26,3 +26,10 @@ granmother(X,Y):- mother(X,Z) , mother(Z,Y).
 
 %You can read as: X is sister of Y?
 sister(X,Y):- parent(Z,X) , parent(Z,Y) , female(X) , X\=Y.
+
+
+%You can read as: X predecessor of Z.
+predecessor(X,Z):- parent(X,Z).
+
+%The previous rule does not cover all situation.
+predecessor(X,Z):- parent(X,Y) , predecessor(Y,Z).
